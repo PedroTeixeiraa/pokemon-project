@@ -1,6 +1,6 @@
 # Pokemon Explorer
 
-Full-stack technical interview exercise built with Java, Spring Boot, PostgreSQL, Redis, React, and Vite.
+Pokemon Explorer is a full-stack Pokemon catalog built for a Java technical interview exercise. It combines a Spring Boot REST API with a React and Vite frontend, integrates with PokeAPI, caches upstream responses in Redis, and stores synchronized Pokemon data plus proprietary local fields in PostgreSQL.
 
 ## Features
 
