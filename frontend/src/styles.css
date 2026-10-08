@@ -1,0 +1,78 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  line-height: 1.5;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+button, input, textarea { font: inherit; }
+button { border: 0; border-radius: 0.75rem; background: #172033; color: white; cursor: pointer; padding: 0.7rem 1rem; }
+button:disabled { cursor: not-allowed; opacity: 0.5; }
+button:hover:not(:disabled) { background: #2d405f; }
+.app-header, .section-heading, .header-actions, .pagination, .tag-row, .detail-hero, .info-grid { display: flex; align-items: center; }
+.app-header, .section-heading { justify-content: space-between; gap: 1rem; margin-bottom: 3rem; }
+.brand { background: transparent; color: #172033; font-size: 1.15rem; font-weight: 800; letter-spacing: 0.1em; padding: 0; }
+.brand:hover { background: transparent; color: #e85d35; }
+.brand span { color: #e85d35; margin: 0 0.15rem; }
+.header-actions { gap: 0.75rem; }
+.user-pill, .tag, .eyebrow { color: #66738b; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.user-pill { background: white; border-radius: 999px; padding: 0.55rem 0.8rem; letter-spacing: 0; text-transform: none; }
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; margin: 0.3rem 0 0; }
+h2 { margin: 0.6rem 0; }
+.muted { color: #66738b; }
+.section-heading button { background: #e85d35; }
+.pokemon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 1rem; }
+.pokemon-card { align-items: center; background: white; color: #172033; display: flex; gap: 1rem; min-height: 140px; padding: 1rem; text-align: left; }
+.pokemon-card:hover { background: #fff8f4; box-shadow: 0 12px 30px rgba(23, 32, 51, 0.08); color: #172033; transform: translateY(-2px); }
+.pokemon-card > div { min-width: 0; }
+.pokemon-card h2 { margin: 0.1rem 0 0.4rem; overflow-wrap: anywhere; }
+.pokemon-card img, .sprite-placeholder, .detail-hero img { background: #f0f3f8; border-radius: 1rem; height: 88px; object-fit: contain; width: 88px; }
+.sprite-placeholder { align-items: center; color: #b1bacb; display: flex; font-size: 2rem; justify-content: center; }
+.tag-row { flex-wrap: wrap; gap: 0.4rem; }
+.tag { background: #edf1f7; border-radius: 999px; color: #4c5e7d; letter-spacing: 0; padding: 0.25rem 0.55rem; text-transform: none; }
+.pagination { justify-content: center; gap: 1rem; margin-top: 2rem; }
+.pagination button, .secondary-button, .back-button { background: transparent; border: 1px solid #d7ddea; color: #172033; }
+.status { background: white; border-radius: 0.8rem; margin: 1rem 0; padding: 1rem; }
+.error { color: #b43a27; background: #fff1ed; }
+.success { color: #24633e; background: #eaf7ef; }
+.auth-card, .edit-form { background: white; border-radius: 1.25rem; box-shadow: 0 12px 35px rgba(23, 32, 51, 0.07); margin: 3rem auto; max-width: 430px; padding: 2rem; }
+form { display: grid; gap: 0.55rem; }
+label { color: #4c5e7d; font-size: 0.9rem; font-weight: 600; margin-top: 0.45rem; }
+input, textarea { border: 1px solid #d7ddea; border-radius: 0.65rem; color: #172033; padding: 0.7rem 0.8rem; }
+textarea { min-height: 100px; resize: vertical; }
+.link-button { background: transparent; color: #e85d35; margin-top: 1rem; padding: 0; }
+.link-button:hover { background: transparent; color: #b43a27; }
+.back-button { margin-bottom: 1.5rem; }
+.detail-layout { display: grid; gap: 2rem; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); }
+.detail-main, .edit-form { min-width: 0; }
+.local-actions { display: grid; gap: 1rem; min-width: 0; }
+.sync-panel { background: #eef3fb; border-radius: 1rem; padding: 1rem; }
+.sync-panel p { color: #4c5e7d; font-size: 0.9rem; margin: 0 0 0.8rem; }
+.detail-hero { gap: 1.5rem; margin-bottom: 2rem; }
+.detail-hero img { height: 150px; width: 150px; }
+.info-grid { align-items: stretch; gap: 1rem; margin: 2rem 0; }
+.info-grid > div { background: white; border-radius: 0.8rem; display: grid; gap: 0.3rem; padding: 1rem; }
+.stats-list { background: white; border-radius: 0.8rem; padding: 1rem; }
+.stat-row { align-items: center; display: grid; gap: 0.7rem; grid-template-columns: 110px 1fr 35px; margin: 0.6rem 0; }
+progress { accent-color: #e85d35; width: 100%; }
+.evolution-line { background: #172033; border-radius: 0.8rem; color: white; padding: 1rem; }
+
+@media (max-width: 700px) {
+  main { padding: 2rem 1rem; }
+  .app-header, .section-heading { align-items: flex-start; flex-direction: column; }
+  .detail-layout { grid-template-columns: 1fr; }
+  .stat-row { gap: 0.4rem; grid-template-columns: 90px minmax(0, 1fr) 32px; }
+}

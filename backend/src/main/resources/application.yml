@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: pokemon-api
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/pokemon}
+    username: ${DB_USERNAME:pokemon}
+    password: ${DB_PASSWORD:pokemon}
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:db/seed.sql
+
+server:
+  port: ${SERVER_PORT:8080}
+
+app:
+  cache:
+    pokeapi-ttl-seconds: ${POKEAPI_CACHE_TTL_SECONDS:600}
+  cors:
+    allowed-origin: ${FRONTEND_URL:http://localhost:5173}
+  jwt:
+    secret: ${JWT_SECRET:change-this-development-secret-to-a-long-random-value}
+    expiration-minutes: ${JWT_EXPIRATION_MINUTES:120}
+
+pokeapi:
+  base-url: ${POKEAPI_BASE_URL:https://pokeapi.co/api/v2}
+  connect-timeout-ms: ${POKEAPI_CONNECT_TIMEOUT_MS:3000}
+  read-timeout-ms: ${POKEAPI_READ_TIMEOUT_MS:5000}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: ${TEST_DB_URL:jdbc:postgresql://localhost:5432/pokemon_test}
+    username: ${TEST_DB_USERNAME:pokemon}
+    password: ${TEST_DB_PASSWORD:pokemon}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
